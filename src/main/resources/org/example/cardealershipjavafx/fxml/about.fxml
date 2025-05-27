@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="250.0" prefWidth="450.0" spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cardealershipjavafx.controller.AboutController">
+    <children>
+        <Label text="Магазин по продаже автомобилей">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Label text="Версия приложения: 1.0.0" />
+        <Label text="Разработано для курсового проекта" />
+        <Label text="Разработчик: Бурлака Фёдор Дмитриевич" />
+        <Label fx:id="dbInfoLabel" text="База данных: ..." />
+        <Label text="© 2025" />
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>

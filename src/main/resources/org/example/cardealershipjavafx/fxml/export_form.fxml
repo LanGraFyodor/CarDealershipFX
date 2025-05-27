@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<VBox spacing="15.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cardealershipjavafx.controller.ExportController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+    <children>
+        <Label text="Экспорт данных">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" minWidth="150.0" />
+                <ColumnConstraints hgrow="ALWAYS" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="30.0" />
+                <RowConstraints minHeight="30.0" />
+            </rowConstraints>
+            <children>
+                <Label text="Выберите источник:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <ComboBox fx:id="sourceComboBox" prefWidth="250.0" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                <Label text="Формат(ы) экспорта:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <HBox spacing="15.0" alignment="CENTER_LEFT" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                    <children>
+                        <CheckBox fx:id="excelCheckBox" text="Excel (.xlsx)" selected="true"/>
+                        <CheckBox fx:id="htmlCheckBox" text="HTML (.html)" />
+                    </children>
+                </HBox>
+            </children>
+        </GridPane>
+        <HBox alignment="CENTER_RIGHT" spacing="10.0">
+            <children>
+                <Button fx:id="exportButton" onAction="#handleExport" text="Экспортировать" style="-fx-base: #2196F3;" prefHeight="30.0" />
+                <Button onAction="#handleCancel" text="Отмена" prefHeight="30.0"/>
+            </children>
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+        </HBox>
+    </children>
+</VBox>

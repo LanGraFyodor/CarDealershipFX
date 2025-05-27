@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cardealershipjavafx.controller.ArrivalFormController">
+    <children>
+        <VBox spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <children>
+                <GridPane hgap="10.0" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                        <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="90.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Автомобиль (*):" GridPane.rowIndex="0" />
+                        <TextField fx:id="carIdField" editable="false" promptText="ID автомобиля" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Button onAction="#handleSelectCar" text="Выбрать" GridPane.columnIndex="2" GridPane.rowIndex="0" prefWidth="90.0"/>
+
+                        <Label text="Водитель:" GridPane.rowIndex="1" />
+                        <TextField fx:id="driverIdField" editable="false" promptText="ID водителя (необязательно)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Button onAction="#handleSelectDriver" text="Выбрать" GridPane.columnIndex="2" GridPane.rowIndex="1" prefWidth="90.0"/>
+
+                        <Label text="Дата поступления (*):" GridPane.rowIndex="2" />
+                        <DatePicker fx:id="arrivalDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.columnSpan="2" prefWidth="Infinity"/>
+
+                        <Label text="Цена закупки (*):" GridPane.rowIndex="3" />
+                        <TextField fx:id="purchasePriceField" promptText="0.00" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
+
+                        <Label text="VIN номер (*):" GridPane.rowIndex="4" />
+                        <TextField fx:id="vinNumberField" promptText="17-значный VIN" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.columnSpan="2"/>
+                    </children>
+                </GridPane>
+                <Label text="Примечания:" />
+                <TextArea fx:id="notesArea" prefHeight="100.0" wrapText="true"/>
+                <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#handleSave" text="Сохранить" style="-fx-base: #4CAF50;"/>
+                        <Button mnemonicParsing="false" onAction="#handleCancel" text="Отмена" />
+                    </children>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

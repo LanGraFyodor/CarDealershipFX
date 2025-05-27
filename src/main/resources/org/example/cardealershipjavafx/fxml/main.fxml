@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="mainPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cardealershipjavafx.controller.MainController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Справочники">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleManufacturers" text="Производители" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleDrivers" text="Водители" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleCarsList" text="Список автомобилей" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Данные">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleArrivals" text="Журнал поступлений" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Отчеты">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleReportCarsWithManufacturer" text="Автомобили с производителями" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleReportArrivalsDetailed" text="Детализированные поступления" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Экспорт">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleExportData" text="Экспорт данных" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Справка">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="О программе" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Файл">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Выход" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+</BorderPane>
